@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akshat-vats-portfolio.pages.dev/sitemap.xml

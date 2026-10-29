@@ -87,7 +87,7 @@ export default [
     {
         title: 'Ha-X Baby',
         titleSmall: [ 'Ha-X', 'Baby' ],
-        url: 'https://ha-x-baby-ten.vercel.app/',
+        url: 'https://koko-talks.ai.studio/',
         attributes:
         {
             role: 'Frontend Developer',

@@ -13,6 +13,14 @@ const text = `
 ║ Welcome to Akshat Vats's interactive 3D portfolio.
 ╚═══════════════════════╝
 
+╔═ Education & Milestones ═══╗
+║ 2006          ⇒ Born & Tech Enthusiast
+║ 2023          ⇒ Class 10th (95.6%)
+║ 2025          ⇒ Class 12th (90.0%)
+║ 2025          ⇒ Governor Awardee (2025)
+║ 2025 - Present⇒ B.Tech in Computer Science & Engineering
+╚════════════════════════════╝
+
 ╔═ Socials ═══════════════╗
 ║ Mail          ⇒ akshatavs1122@gmail.com
 ║ GitHub        ⇒ https://github.com/akaAkshat246
@@ -31,7 +39,7 @@ const text = `
 ║ Debug Assistant ⇒ https://debug-assistant-5g7p.onrender.com
 ║ Aarogya Grid AI ⇒ https://aarogya-grid-ai-alpha.vercel.app/
 ║ WaterMap        ⇒ https://watermap-frontend-120030173066.us-central1.run.app
-║ Ha-X Baby       ⇒ https://ha-x-baby-ten.vercel.app/
+║ Ha-X Baby       ⇒ https://koko-talks.ai.studio/
 ║ Janamashtami    ⇒ https://janamashtamii.netlify.app
 ║ My Project      ⇒ https://akaakshat246.github.io/my-project/
 ╚═══════════════════════╝

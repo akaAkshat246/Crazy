@@ -60,7 +60,7 @@ const milestones = [
         width: 316,
         height: 60,
         lines: [
-            { text: 'THE JOURNEY BEGINS', size: 16.5 },
+            { text: 'AKSHAT VATS', size: 17 },
             { text: 'BORN IN 2006', size: 17 }
         ]
     },
@@ -78,8 +78,8 @@ const milestones = [
         width: 168,
         height: 60,
         lines: [
-            { text: '10TH GRADE', size: 15.5 },
-            { text: '95.6% SCORE', size: 15.5 }
+            { text: '10TH GRADE', size: 15 },
+            { text: '95.6% (2023)', size: 14 }
         ]
     },
     {
@@ -87,9 +87,9 @@ const milestones = [
         width: 268,
         height: 92,
         lines: [
-            { text: 'GOVERNOR AWARD', size: 15.5 },
-            { text: 'UTTAR PRADESH', size: 15.5 },
-            { text: 'GOVT. HONOREE', size: 15.5 }
+            { text: 'GOVERNOR AWARDEE', size: 15 },
+            { text: 'YEAR 2025', size: 15 },
+            { text: 'SPECIAL HONOREE', size: 14.5 }
         ]
     },
     {
@@ -97,7 +97,7 @@ const milestones = [
         width: 340,
         height: 60,
         lines: [
-            { text: '12TH GRADE (2025)', size: 17 },
+            { text: 'CLASS 12TH (2025)', size: 17 },
             { text: '90% SCORE', size: 17 }
         ]
     },
@@ -107,8 +107,8 @@ const milestones = [
         height: 92,
         lines: [
             { text: 'PURSUING B.TECH', size: 16.5 },
-            { text: 'CSE BRANCH', size: 16.5 },
-            { text: '2025 - PRESENT', size: 16.5 }
+            { text: 'COMPUTER SCIENCE', size: 16 },
+            { text: '2025 TILL NOW', size: 16.5 }
         ]
     }
 ];
@@ -145,44 +145,12 @@ async function generate() {
 `;
 
         const outPath = path.join('static', 'career', `${m.name}.png`);
-        
-        // Backup original if not yet backed up
-        const backupPath = path.join('static', 'career', `${m.name}.orig.png`);
-        if (!fs.existsSync(backupPath)) {
-            fs.copyFileSync(outPath, backupPath);
-        }
 
         await sharp(Buffer.from(svg))
             .png()
             .toFile(outPath);
 
         console.log(`Generated ${m.name}.png (${m.width}x${m.height})`);
-
-        // Generate a preview simulating the exact in-game shader
-        const img = sharp(outPath);
-        const { data, info } = await img.raw().toBuffer({ resolveWithObject: true });
-        const outData = Buffer.alloc(info.width * info.height * 3);
-        for (let i = 0, j = 0; i < data.length; i += info.channels, j += 3) {
-            const r = data[i] / 255;
-            const g = data[i + 1] / 255;
-            
-            // Mask color #251f2b: [37, 31, 43]
-            // Glowing text: [255, 230, 200]
-            const isVisible = Math.max(r, g) >= 0.1;
-            if (isVisible) {
-                outData[j] = Math.round(37 * (1 - r) + 255 * r);
-                outData[j + 1] = Math.round(31 * (1 - r) + 245 * r);
-                outData[j + 2] = Math.round(43 * (1 - r) + 235 * r);
-            } else {
-                // Background dark void
-                outData[j] = 18;
-                outData[j + 1] = 16;
-                outData[j + 2] = 22;
-            }
-        }
-        await sharp(outData, { raw: { width: info.width, height: info.height, channels: 3 } })
-            .png()
-            .toFile(path.join('static', 'career', `${m.name}-preview.png`));
     }
 }
 

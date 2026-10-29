@@ -23,9 +23,8 @@ export class Viewport
         const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 800
 
         this.pixelRatioPure = window.devicePixelRatio || 1
-        // On high-DPR mobile screens (e.g. Retina DPR 3), cap to 1.5 to eliminate GPU fill-rate latency and thermal throttling
-        // Desktop can comfortably run at 2.0
-        this.pixelRatioMax = isMobile ? 1.5 : 2
+        // Cap pixel ratio to 1.5 on desktop and 1.25 on mobile to eliminate GPU fill-rate latency and thermal throttling
+        this.pixelRatioMax = isMobile ? 1.25 : 1.5
         this.pixelRatio = Math.min(this.pixelRatioPure, this.pixelRatioMax)
     }
 

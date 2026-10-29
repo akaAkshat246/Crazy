@@ -35,12 +35,12 @@ export class Server
             // First connect attempt
             this.connect()
             
-            // Reconnect attempt every 6 seconds if disconnected and not in flight
+            // Reconnect attempt every 12 seconds if disconnected and not in flight
             setInterval(() =>
             {
                 if(!this.connected && !this.connecting)
                     this.connect()
-            }, 6000)
+            }, 12000)
         }
     }
 
@@ -51,6 +51,19 @@ export class Server
 
         this.connecting = true
 
+        // 3.5s timeout aborts pending socket to prevent browser network stall
+        const connectTimeout = setTimeout(() =>
+        {
+            if(this.connecting && !this.connected)
+            {
+                if(this.socket)
+                {
+                    try { this.socket.close() } catch(e) {}
+                }
+                this.connecting = false
+            }
+        }, 3500)
+
         try
         {
             this.socket = new WebSocket(this.serverUrl)
@@ -58,6 +71,7 @@ export class Server
         }
         catch(e)
         {
+            clearTimeout(connectTimeout)
             this.connecting = false
             return
         }
@@ -65,11 +79,13 @@ export class Server
         // Error handling to prevent unhandled socket events or latency
         this.socket.addEventListener('error', () =>
         {
+            clearTimeout(connectTimeout)
             this.connecting = false
         })
 
         this.socket.addEventListener('open', () =>
         {
+            clearTimeout(connectTimeout)
             this.connecting = false
             this.connected = true
             this.wasConnected = true
@@ -104,6 +120,7 @@ export class Server
             // On close
             this.socket.addEventListener('close', () =>
             {
+                clearTimeout(connectTimeout)
                 this.connecting = false
                 const hadConnection = this.connected
                 this.connected = false

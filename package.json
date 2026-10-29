@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/sync-music.js && node scripts/process-social-icons.js && node scripts/generate-favicons.js && vite --mode development",
-    "build": "node scripts/sync-music.js && node scripts/process-social-icons.js && node scripts/generate-favicons.js && vite build --mode production",
+    "dev": "node scripts/sync-music.js && node scripts/process-social-icons.js && node scripts/generate-favicons.js && node scripts/generate-career-textures.js && vite --mode development",
+    "build": "node scripts/sync-music.js && node scripts/process-social-icons.js && node scripts/generate-favicons.js && node scripts/generate-career-textures.js && vite build --mode production",
     "preview": "vite preview",
     "serve": "node server/server.js",
     "compress": "node scripts/compress.js static/",

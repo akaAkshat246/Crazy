@@ -20,7 +20,7 @@ class CheapDOFNode extends TempNode
 		this.start = uniform(0.2)
 		this.end = uniform(0.5)
 
-		this.repeats = uniform(25)
+		this.repeats = uniform(6)
 		this.amount = uniform(0.003)
 	}
 
