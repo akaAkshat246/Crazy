@@ -1,0 +1,19 @@
+.DS_Store
+node_modules
+dist
+.vercel
+.VSCodeCounter
+.autosave
+*.orig
+*.wav
+resources/backup/
+scraped_archive/
+Music/
+*.code-workspace
+/*.png
+
+# Environment variables
+.env
+.env.local
+!.env.example
+!.env.production
