@@ -1,0 +1,87 @@
+.intro-loader
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 99999
+    display flex
+    align-items center
+    justify-content center
+    background radial-gradient(circle at center, #231c2b 0%, #120d18 100%)
+    opacity 1
+    visibility visible
+    transition opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.7s cubic-bezier(0.4, 0, 0.2, 1)
+    pointer-events all
+    user-select none
+
+    &.is-hidden
+        opacity 0
+        visibility hidden
+        pointer-events none
+
+    .intro-loader-content
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+
+    .intro-loader-ring-container
+        position relative
+        width 280px
+        height 280px
+        display flex
+        align-items center
+        justify-content center
+
+        @media (max-width: 480px)
+            width 240px
+            height 240px
+
+    .intro-loader-ring
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        transform rotate(-90deg)
+
+    .intro-loader-ring-bg
+        fill none
+        stroke rgba(232, 142, 255, 0.12)
+        stroke-width 5px
+
+    .intro-loader-ring-progress
+        fill none
+        stroke #e88eff
+        stroke-width 5.5px
+        stroke-linecap round
+        stroke-dasharray 439.82
+        stroke-dashoffset 439.82
+        transition stroke-dashoffset 0.25s ease-out
+        filter drop-shadow(0 0 10px rgba(232, 142, 255, 0.7))
+
+    .intro-loader-percent
+        position relative
+        z-index 2
+        text-align center
+        font-family 'Nunito', sans-serif
+        font-size 44px
+        font-weight 900
+        line-height 1
+        color #ffffff
+        letter-spacing -0.01em
+        font-variant-numeric tabular-nums
+        text-shadow 0 0 25px rgba(232, 142, 255, 0.65)
+        animation loaderPercentPulse 2.5s ease-in-out infinite
+
+        @media (max-width: 480px)
+            font-size 36px
+
+@keyframes loaderPercentPulse
+    0%, 100%
+        opacity 0.92
+        transform scale(0.98)
+    50%
+        opacity 1
+        transform scale(1.02)
