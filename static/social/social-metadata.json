@@ -1,0 +1,65 @@
+[
+  {
+    "id": "github",
+    "name": "GitHub",
+    "color": "#FFFFFF",
+    "tileBg": "#181b22",
+    "icon": "social/icons/github.png"
+  },
+  {
+    "id": "linkedin",
+    "name": "LinkedIn",
+    "color": "#0A66C2",
+    "tileBg": "#0A66C2",
+    "icon": "social/icons/linkedin.png"
+  },
+  {
+    "id": "mail",
+    "name": "Mail",
+    "color": "#EA4335",
+    "tileBg": "#FFFFFF",
+    "icon": "social/icons/mail.png"
+  },
+  {
+    "id": "instagram",
+    "name": "Instagram",
+    "color": "#E4405F",
+    "tileBg": "#E4405F",
+    "icon": "social/icons/instagram.png"
+  },
+  {
+    "id": "leetcode",
+    "name": "LeetCode",
+    "color": "#FFA116",
+    "tileBg": "#181b22",
+    "icon": "social/icons/leetcode.png"
+  },
+  {
+    "id": "codechef",
+    "name": "CodeChef",
+    "color": "#5B4638",
+    "tileBg": "#5B4638",
+    "icon": "social/icons/codechef.png"
+  },
+  {
+    "id": "codolio",
+    "name": "Codolio",
+    "color": "#3B82F6",
+    "tileBg": "#181b22",
+    "icon": "social/icons/codolio.png"
+  },
+  {
+    "id": "hackerrank",
+    "name": "HackerRank",
+    "color": "#2EC866",
+    "tileBg": "#181b22",
+    "icon": "social/icons/hackerrank.png"
+  },
+  {
+    "id": "geeksforgeeks",
+    "name": "GeeksforGeeks",
+    "color": "#2F8D46",
+    "tileBg": "#181b22",
+    "icon": "social/icons/geeksforgeeks.png"
+  }
+]
