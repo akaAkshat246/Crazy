@@ -1,0 +1,27 @@
+/*
+  Access-Control-Allow-Origin: *
+  X-Content-Type-Options: nosniff
+
+# Immutable Cache for 3D Models, Textures, WASM, and Audio (True 0ms reload)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.glb
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ktx
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/sounds/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML is always validated fresh
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
